@@ -266,3 +266,108 @@ Migrating to CreateUsers (20210529015000)
   ↳ bin/rails:4
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:4
+Started GET "/cats" for ::1 at 2021-05-28 19:44:50 -0700
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/leocao/gems/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (2.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:4
+  Rendered cats/index.html.erb within layouts/application (22.2ms)
+Completed 500 Internal Server Error in 186ms (ActiveRecord: 16.2ms)
+
+
+
+NameError - undefined local variable or method `new_user_url' for #<#<Class:0x000000013a5eaf70>:0x000000013a630bd8>
+Did you mean?  new_uer_url:
+  app/views/layouts/application.html.erb:17:in `_app_views_layouts_application_html_erb___2755675768705614291_2637307720'
+  app/controllers/cats_controller.rb:4:in `index'
+
+Started POST "/__better_errors/9a5a5fae892813d6/variables" for ::1 at 2021-05-28 19:44:50 -0700
+Started GET "/cats" for ::1 at 2021-05-28 19:46:26 -0700
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/leocao/gems/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (1.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:4
+  Rendered cats/index.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 102ms (Views: 85.6ms | ActiveRecord: 14.5ms)
+
+
+Started GET "/users/new" for ::1 at 2021-05-28 19:46:30 -0700
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 4.3ms)
+
+
+
+NameError - undefined local variable or method `session_token' for #<Class:0x000000011309c040>:
+  app/models/user.rb:2:in `<class:User>'
+  app/models/user.rb:1:in `<main>'
+  app/controllers/users_controller.rb:16:in `new'
+
+Started POST "/__better_errors/16eecc00fbf54786/variables" for ::1 at 2021-05-28 19:46:30 -0700
+Started GET "/users/new" for ::1 at 2021-05-28 19:47:00 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.3ms)
+  Rendered users/new.html.erb within layouts/application (8.3ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 12.4ms)
+
+
+
+NoMethodError - undefined method `username' for #<User:0x0000000113af6900>
+Did you mean?  user_name
+               user_name?
+               user_name=:
+  app/views/users/new.html.erb:17:in `_app_views_users_new_html_erb___2594787661510315070_2312890260'
+  app/controllers/users_controller.rb:17:in `new'
+
+Started POST "/__better_errors/c25395b8d8fe6e96/variables" for ::1 at 2021-05-28 19:47:00 -0700
+Started GET "/users/new" for ::1 at 2021-05-28 19:47:47 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.3ms)
+  Rendered users/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2021-05-28 19:48:04 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"2Z3othjIa1NwNRI4HPU9CfTHDXKjGtZkSW4XeVmnH6JKkK1xQHVYgX8mHuXS1yg7M6XIRZB/6AnXMBplTQ2Uyw==", "user"=>{"username"=>"leocho1989", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :username
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - uninitialized constant User::BCrypt:
+  app/models/user.rb:19:in `password='
+  app/controllers/users_controller.rb:5:in `create'
+
+Started POST "/__better_errors/847f0f7cdefaac0c/variables" for ::1 at 2021-05-28 19:48:04 -0700
+Started POST "/users" for ::1 at 2021-05-28 19:51:05 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"2Z3othjIa1NwNRI4HPU9CfTHDXKjGtZkSW4XeVmnH6JKkK1xQHVYgX8mHuXS1yg7M6XIRZB/6AnXMBplTQ2Uyw==", "user"=>{"username"=>"leocho1989", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :username
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 15.3ms)
+
+
+
+NameError - uninitialized constant User::BCrypt:
+  app/models/user.rb:20:in `password='
+  app/controllers/users_controller.rb:5:in `create'
+
+Started POST "/__better_errors/69687100dc548c4d/variables" for ::1 at 2021-05-28 19:51:05 -0700
+Started POST "/users" for ::1 at 2021-05-28 19:51:11 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"2Z3othjIa1NwNRI4HPU9CfTHDXKjGtZkSW4XeVmnH6JKkK1xQHVYgX8mHuXS1yg7M6XIRZB/6AnXMBplTQ2Uyw==", "user"=>{"username"=>"leocho1989", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :username
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - uninitialized constant User::BCrypt:
+  app/models/user.rb:20:in `password='
+  app/controllers/users_controller.rb:5:in `create'
+
+Started POST "/__better_errors/62a9043d007d616b/variables" for ::1 at 2021-05-28 19:51:11 -0700
